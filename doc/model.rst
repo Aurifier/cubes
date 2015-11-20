@@ -13,7 +13,7 @@ focus on data instead on ways of how to get the data in understandable form.
         Example database schemas and their respective models.
 
     :doc:`reference/model`
-        Reference of model classes and fucntions.
+        Reference of model classes and functions.
 
     `Cubes Models <https://github.com/DataBrewery/cubes-models>`_
         Repository of basic cubes models.
@@ -24,7 +24,7 @@ Introduction
 The logical model enables users to:
 
 * see the data from the business perspective
-* hide physical structure of the data ("how application's use it")
+* hide physical structure of the data ("how applications use it")
 * specify concept hierarchies of attributes, such as:
     * `product category > product > subcategory > product`
     * `country > region > county > town`.
@@ -118,7 +118,7 @@ Mappings and Joins
 One can specify shared mappings and joins on the model-level. Those mappings
 and joins are inherited by all the cubes in the model.
 
-The ``mappigns`` dictionary of a cube is merged with model's global mapping
+The ``mappings`` dictionary of a cube is merged with model's global mapping
 dictionary. Cube's values overwrite the model's values.
 
 The ``joins`` can be considered as named templates. They should contain
@@ -134,7 +134,7 @@ Inheritance
 
 .. TODO: move this into recipes
 
-Cubes in a model will inherint mappings and joins from the model. The mappings
+Cubes in a model will inherit mappings and joins from the model. The mappings
 are merged in a way that cube's mappings replace existing model's
 mappings with the same name. Joins are concatenated or merged by their name.
 
@@ -281,10 +281,10 @@ description dictionary or in json files with prefix ``cube_`` like
       - Custom info, such as formatting. Not used by cubes framework.
     * - ``dimensions`` *
       - List of dimension names or dimension links (recommended, but might be
-        empty for dimension-less cubes). Recommended.
+        empty for dimension-less cubes).
     * - ``measures``
       - List of cube measures (recommended, but might be empty for
-        measure-less, record count only cubes). Recommended.
+        measure-less, record count only cubes).
     * - ``aggregates``
       - List of aggregated measures. Required, if no measures are specified.
     * - ``details``
@@ -472,7 +472,7 @@ both lists are merged together.
 .. note::
 
     To prevent automated creation of default aggregates from measures, there
-    is an advanced cube option ``implicit_aggergates``. Set this property to
+    is an advanced cube option ``implicit_aggregates``. Set this property to
     `False` if you want to keep only explicit list of aggregates.
 
 
@@ -530,7 +530,7 @@ specification might contain:
 * ``default_hierarchy_name`` – name of default hierarchy for a dimension in
   the context of the cube
 * ``cardinality`` – cardinality of the dimension with regards to the cube. For
-  example one cube might contain housands product types, another might have
+  example one cube might contain thousands product types, another might have
   only a few, but they both share the same `products` dimension
 * ``alias`` – how the dimension is going to be called in the cube. For
   example, you might have two date dimensions and name them `start_date` and
